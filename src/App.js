@@ -40,11 +40,8 @@ export default function App() {
   return (
     <div className="App">
       <h3>
-        Choose Your Favourite emoji{" "}
+        Choose Your Favourite emoji
         <span id="spantext">and know its meaning...</span>
-      </h3>
-      <h3 style={{ color: "brown" }}>
-        Enter an emoji below and get its meaning 👇
       </h3>
       <input onChange={inputEventHandler}></input>
       <p id="meaning">{meaning}</p>
