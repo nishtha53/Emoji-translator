@@ -28,6 +28,9 @@ export default function App() {
     emoji = emoji.trim(" "); //remove extra space added in emoji
     var currentMeaning = emojiYouKnow[emoji];
   if (emoji in emojiYouKnow) {
+    if (currentMeaning === undefined) {
+      currentMeaning = "We do not have this in our database😢";
+    }
     setmeaning(currentMeaning);
   } else if (emoji === "") {
     setmeaning("");
