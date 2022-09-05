@@ -27,11 +27,14 @@ export default function App() {
     let emoji = e.target.value;
     emoji = emoji.trim(" "); //remove extra space added in emoji
     var currentMeaning = emojiYouKnow[emoji];
-    if (currentMeaning === undefined) {
-      currentMeaning = "we do not have thi in our database";
-    }
+  if (emoji in emojiYouKnow) {
     setmeaning(currentMeaning);
+  } else if (emoji === "") {
+    setmeaning("");
+  } else {
+    setmeaning("We do not have this in our database😢");
   }
+}
 
   function emojoClickEventHandler(emoji) {
     setmeaning(emojiYouKnow[emoji]);
@@ -40,9 +43,8 @@ export default function App() {
   return (
     <div className="App">
       <h3>
-        Choose Your Favourite emoji
-        <span id="spantext">and know its meaning...</span>
-      </h3>
+        Choose Your Favourite emoji <span id="spantext"> and know its meaning...</span>
+      </h3><br/>
       <input onChange={inputEventHandler}></input>
       <p id="meaning">{meaning}</p>
       <div
